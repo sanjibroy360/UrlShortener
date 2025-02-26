@@ -1,7 +1,7 @@
 export default function HeroSection() {
   return (
     <section className="relative bg-indigo-600 py-24 shadow text-center">
-      <div className="w-1/3 mx-auto">
+      <div className="sm:w-1/2 md:w-1/3 mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
           Simplify Your Links
         </h1>

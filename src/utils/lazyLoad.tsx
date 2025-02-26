@@ -10,7 +10,7 @@ import Loader from "../components/common/Loader";
 
 function lazyLoad<T extends ComponentType<any>>(
   importComponentFn: () => Promise<{ default: T }>
-): FC<ComponentProps<T>> {
+) {
   const LazyComponent = lazy(importComponentFn);
 
   const LazyLoadedComponent: FC<ComponentProps<T>> = memo((props) => (

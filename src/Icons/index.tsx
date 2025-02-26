@@ -1,10 +1,32 @@
-import { CheckCircle, ClipboardText, Link, Trash } from "@phosphor-icons/react";
+import {
+  CheckCircle,
+  ClipboardText,
+  Link,
+  Trash,
+  ArrowSquareOut,
+} from "@phosphor-icons/react";
 
-const ICON_SIZE = 20;
+interface IconProps {
+  classNames?: string;
+}
 
-export const ClipboardIcon = () => <ClipboardText size={ICON_SIZE} />;
-export const CheckIcon = () => (
-  <CheckCircle size={ICON_SIZE} color="green" weight="fill" />
+export const ClipboardIcon = ({ classNames = "" }: IconProps) => (
+  <ClipboardText className={`text-sm md:text-lg ${classNames}`} />
 );
-export const TrashIcon = () => <Trash size={ICON_SIZE} />;
-export const LinkIcon = () => <Link size={ICON_SIZE} />;
+
+export const CheckIcon = ({ classNames = "" }: IconProps) => (
+  <CheckCircle
+    className={`text-sm md:text-lg ${classNames}`}
+    color="blue"
+    weight="fill"
+  />
+);
+export const TrashIcon = ({ classNames = "" }: IconProps) => (
+  <Trash className={`text-sm md:text-lg ${classNames}`} />
+);
+export const LinkIcon = ({ classNames = "" }: IconProps) => (
+  <Link className={`text-sm md:text-lg ${classNames}`} />
+);
+export const ArrowSquareOutIcon = ({ classNames = "" }: IconProps) => (
+  <ArrowSquareOut className={`text-sm md:text-lg ${classNames}`} />
+);
