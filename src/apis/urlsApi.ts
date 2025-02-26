@@ -12,6 +12,6 @@ export const createUrl = async (longUrl: string) => {
   return data;
 };
 
-export const deleteUrl = async (id: string) => {
-  await axios.delete(`/urls/${id}`);
+export const deleteUrl = async (short_code: string) => {
+  await axios.delete(`/urls/${short_code}`);
 };

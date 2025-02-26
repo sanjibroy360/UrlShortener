@@ -1,18 +1,23 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import lazyLoad from "./utils/lazyLoad";
 
-const HeroSection = lazyLoad(() => import("./components/HeroSection"));
-const UrlForm = lazyLoad(() => import("./components/UrlForm"));
-const UrlList = lazyLoad(() => import("./components/UrlList"));
+const HomePage = lazyLoad(() => import("./pages/HomePage"));
 
-export default function UrlShortener() { 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-100">
-      <HeroSection />
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" replace />,
+  },
+]);
 
-      <main className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <UrlForm />
-        <UrlList />
-      </main>
-    </div>
-  );
+export default function App() {
+  return <RouterProvider router={router} />;
 }

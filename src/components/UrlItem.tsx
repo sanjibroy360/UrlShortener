@@ -16,11 +16,20 @@ export default function UrlItem({ url }: UrlItemProps) {
   const { deleteUrl } = useUrls();
   const [isCopied, setIsCopied] = useState<string | null>(null);
 
-  const onDelete = (urlShortCode: string) => {
+  const handleDeleteURL = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    urlShortCode: string
+  ) => {
+    e?.stopPropagation();
     deleteUrl(urlShortCode);
   };
 
-  const copyToClipboard = (text: string, id: string) => {
+  const copyToClipboard = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    text: string,
+    id: string
+  ) => {
+    e?.stopPropagation();
     navigator.clipboard.writeText(text);
     setIsCopied(id);
     setTimeout(() => setIsCopied(null), 2000);
@@ -54,13 +63,13 @@ export default function UrlItem({ url }: UrlItemProps) {
           <ArrowSquareOutIcon />
         </a>
         <button
-          onClick={() => copyToClipboard(url.shortened_url, url.id)}
+          onClick={(e) => copyToClipboard(e, url.shortened_url, url.id)}
           className="text-gray-400 hover:text-indigo-600 cursor-pointer"
         >
           {isCopied === url.id ? <CheckIcon /> : <ClipboardIcon />}
         </button>
         <button
-          onClick={() => onDelete(url.id)}
+          onClick={(e) => handleDeleteURL(e, url.short_code)}
           className="text-gray-400 hover:text-red-600 cursor-pointer"
         >
           <TrashIcon />
