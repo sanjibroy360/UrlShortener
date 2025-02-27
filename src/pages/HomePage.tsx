@@ -10,7 +10,6 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-100">
       <HeroSection />
-
       <main className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <UrlForm />
         <UrlList />
