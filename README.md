@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# URL Shortener React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The URL Shortener React Application is a modern frontend built with React and Vite.
 
-Currently, two official plugins are available:
+## Demo Video
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[https://www.loom.com/share/b02c7975f59944ed8a6204ff5a63d608?sid=7dfb99c8-d49a-45ed-9481-4a4cc5dfcc52](https://www.loom.com/share/b02c7975f59944ed8a6204ff5a63d608?sid=7dfb99c8-d49a-45ed-9481-4a4cc5dfcc52)
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React** with Vite
+- **Tailwind CSS** for styling
+- **React Query** for efficient data fetching and caching
+- **React Router DOM** for routing
+- **TypeScript** for type-safe development
+- **Axios** for HTTP requests
+- **Phosphor Icons**
 
-- Configure the top-level `parserOptions` property like this:
+## ⚙️ Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Follow these steps to set up the project locally:
+
+1. **Clone the repository**
+
+```bash
+git@github.com:sanjibroy360/UrlShortener.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Navigate to the Project Directory**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+cd UrlShortener
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+3. **Install Dependencies**
+
+```bash
+yarn install
+# or using npm:
+# npm install
+
+```
+
+3. **Run Locally**
+
+```bash
+yarn dev
+# or using npm:
+# npm run dev
+
 ```
